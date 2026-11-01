@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Design Studio | Sketch My Shoes</title>
+<meta name="description" content="Design your own 1-of-1 bespoke footwear. Share your idea, colors, and reference images with our footwear artists on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Custom Design Studio | Sketch My Shoes">
+<meta property="og:description" content="Design your own 1-of-1 bespoke footwear. Share your idea, colors, and reference images with our footwear artists.">
+<meta property="og:site_name" content="Sketch My Shoes">
+<meta property="og:image" content="assets/images/collection-custom.jpg">
+<meta name="theme-color" content="#FBF9F5">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body data-page="custom">
+<main id="main">
+
+<div class="narrow section" id="custom-wrap">
+  <div style="margin-bottom:32px">
+    <p class="eyebrow"><span class="pulse-dot"></span> 1-of-1 Bespoke Atelier</p>
+    <h1>Your Ideas. Your Shoes. 1-of-1.</h1>
+    <p class="muted" style="font-size:1.15rem;line-height:1.7">Have a concept in mind? Our resident sneaker artists transform your vision into wearable art using specialized waterproof Angelus acrylics and custom dye treatments.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin:28px 0 44px">
+    <div style="background:var(--surface);padding:18px;border-radius:var(--radius-md);border:1px solid var(--line-subtle)">
+      <div style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:4px">Step 01</div>
+      <strong>Submit Concept</strong>
+      <p class="small muted" style="margin:4px 0 0">Describe your theme, colorway, or upload references.</p>
+    </div>
+    <div style="background:var(--surface);padding:18px;border-radius:var(--radius-md);border:1px solid var(--line-subtle)">
+      <div style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:4px">Step 02</div>
+      <strong>Digital Mockup</strong>
+      <p class="small muted" style="margin:4px 0 0">Review your 2D render with our artists via WhatsApp.</p>
+    </div>
+    <div style="background:var(--surface);padding:18px;border-radius:var(--radius-md);border:1px solid var(--line-subtle)">
+      <div style="font-size:0.8rem;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:4px">Step 03</div>
+      <strong>Hand-Painted &amp; Shipped</strong>
+      <p class="small muted" style="margin:4px 0 0">Cured, weatherproof-sealed, and express delivered.</p>
+    </div>
+  </div>
+
+  <form id="custom-form" novalidate style="background:var(--surface);padding:32px;border-radius:var(--radius-xl);border:1px solid var(--line-subtle);box-shadow:var(--shadow-sm)">
+    <div class="two">
+      <div class="field"><label for="f-name">Full Name *</label><input id="f-name" name="name" autocomplete="name" placeholder="e.g. Alex Sharma"><p class="form-error" data-err="name" hidden></p></div>
+      <div class="field"><label for="f-phone">WhatsApp Contact Number *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"><p class="form-error" data-err="phone" hidden></p></div>
+    </div>
+    <div class="field"><label for="f-email">Email Address</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><p class="form-error" data-err="email" hidden></p></div>
+    <div class="two">
+      <div class="field"><label for="f-type">Shoe Silhouette *</label><input id="f-type" name="shoeType" placeholder="e.g. Air Force 1, Retro Runner, Court Leather"><p class="form-error" data-err="shoeType" hidden></p></div>
+      <div class="field"><label for="f-size">UK Shoe Size *</label><input id="f-size" name="size" placeholder="e.g. UK 8 / UK 9"><p class="form-error" data-err="size" hidden></p></div>
+    </div>
+    <div class="field"><label for="f-design">Design Concept &amp; Story *</label><textarea id="f-design" name="design" placeholder="Describe your design: themes, graphics, anime, floral, abstract, anime, graffiti, initials, etc."></textarea><p class="form-error" data-err="design" hidden></p></div>
+    <div class="two">
+      <div class="field"><label for="f-colour">Color Palette Preferences</label><input id="f-colour" name="colour" placeholder="e.g. Pastel lavender, neon orange, vintage cream"></div>
+      <div class="field"><label for="f-budget">Estimated Budget</label><input id="f-budget" name="budget" placeholder="e.g. ₹6,000 – ₹9,000"></div>
+    </div>
+    <div class="field"><span class="lbl" id="own-l">Shoe Supply Preference *</span>
+      <div class="radios" role="radiogroup" aria-labelledby="own-l">
+        <label><input type="radio" name="ownership" value="I need a new pair provided by studio" checked> Provide brand new shoes (Recommended)</label>
+        <label><input type="radio" name="ownership" value="I will send my own pair"> I will courier my own pair</label>
+      </div>
+      <p class="form-error" data-err="ownership" hidden></p>
+    </div>
+    <div class="field"><label for="f-image">Reference Moodboard / Sketch (Optional)</label><input id="f-image" name="image" type="file" accept="image/*"><p class="form-error" data-err="image" hidden></p><p class="muted small">You will also be able to send reference photos directly in the WhatsApp chat.</p></div>
+    <div class="field"><label for="f-notes">Special Requests / Occasion Date</label><textarea id="f-notes" name="notes" placeholder="e.g. Birthday gift, wedding sneakers, need by 25th November"></textarea></div>
+    <div style="display:flex;gap:12px;margin-top:24px">
+      <button class="btn btn--dark" type="submit">Review &amp; Submit on WhatsApp &rarr;</button>
+      <button class="btn btn--ghost" type="reset">Reset Form</button>
+    </div>
+  </form>
+  <div id="enquiry-summary" hidden></div>
+</div>
+
+</main>
+<script src="js/config.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/checkout.js" defer></script>
+<script src="js/custom-design.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>

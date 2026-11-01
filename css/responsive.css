@@ -1,0 +1,773 @@
+/* ==========================================================================
+   SKETCH MY SHOES — RESPONSIVE DESIGN SYSTEM OVERRIDES
+   Breakpoints: 360, 480, 768, 900, 1024, 1440
+   ========================================================================== */
+
+@media (min-width: 1440px) {
+  .container { width: min(1380px, 100% - 80px); }
+}
+
+@media (max-width: 1024px) {
+  .collections { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .nav { gap: 4px; }
+  .nav a { padding: 6px 10px; font-size: 0.82rem; }
+  .shop { grid-template-columns: 240px 1fr; gap: 32px; }
+  .ig-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 899px) {
+  .only-desktop { display: none !important; }
+  .only-mobile { display: inline-flex !important; }
+
+  .header__row {
+    height: 66px;
+    gap: 12px;
+  }
+
+  .logo { font-size: 1.08rem; }
+  .logo-sub { display: none; }
+
+  /* Hero on tablet/mobile */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 24px 0 40px;
+    gap: 28px;
+  }
+
+  .hero__media {
+    order: -1;
+    aspect-ratio: 4/3;
+    max-height: 420px;
+  }
+
+  .hero__text p {
+    font-size: 1.05rem;
+  }
+
+  .story, .pdp, .split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .qv {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Shop filter bottom sheet on mobile */
+  .shop { grid-template-columns: 1fr; }
+  #filters-open { display: inline-flex; }
+
+  .filters-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 130;
+    max-height: none;
+    background: rgba(17, 17, 17, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s var(--ease), visibility 0.25s var(--ease);
+    top: 0;
+    padding: 0;
+  }
+
+  .filters-wrap.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .filters-wrap .filters-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: var(--surface);
+    padding: 24px 20px;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.35s var(--ease);
+    box-shadow: var(--shadow-float);
+  }
+
+  .filters-wrap.open .filters-panel {
+    transform: none;
+  }
+
+  .filters__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 767px) {
+  .container { width: calc(100% - 32px); }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+  }
+
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .card__body {
+    padding: 12px;
+  }
+
+  .card__title {
+    font-size: 0.92rem;
+  }
+
+  .card__price {
+    font-size: 1rem;
+  }
+
+  .card__quick {
+    display: none;
+  }
+
+  .collections {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .collection {
+    aspect-ratio: 1;
+  }
+
+  .collection__title {
+    font-size: 1.05rem;
+  }
+
+  .collection__scrim {
+    padding: 14px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ig-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .two { grid-template-columns: 1fr; }
+  .summary { grid-template-columns: 1fr; gap: 4px; }
+  .summary dd { margin-bottom: 12px; }
+  .newsletter { flex-direction: column; }
+  .pdp__actions { grid-template-columns: 1fr 52px; }
+  .pdp__actions #add { grid-column: 1 / -1; }
+  .section { padding: 48px 0; }
+
+  /* Floating concierge & chat buttons */
+  .wa-float {
+    right: 16px;
+    bottom: 84px;
+    width: 50px;
+    height: 50px;
+  }
+  .wa-float svg { width: 26px; height: 26px; }
+
+  .chat-launch {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+  .chat-launch svg { width: 24px; height: 24px; }
+
+  .chat-panel {
+    right: 8px;
+    left: 8px;
+    width: auto;
+    bottom: 80px;
+    height: min(72vh, 560px);
+  }
+
+  .modal__panel { padding: 24px 18px; border-radius: var(--radius-lg); }
+  .btn { padding: 12px 20px; }
+  body { padding-bottom: 76px; }
+
+  .about-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .logo { font-size: 0.95rem; }
+  .card__title { font-size: 0.96rem; }
+}
+
+
+/* ==========================================
+   SKETCH MY SHOES — RESPONSIVE SYSTEM
+   Mobile | Tablet | Laptop | Desktop
+========================================== */
+
+/* Global responsive safety */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: min(100% - 64px, 1240px);
+  margin-inline: auto;
+}
+
+/* ==========================================
+   LARGE DESKTOP — 1440px+
+========================================== */
+
+@media (min-width: 1440px) {
+  .container {
+    width: min(100% - 100px, 1360px);
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(4rem, 5.5vw, 6rem);
+    line-height: 1.05;
+  }
+
+  .section {
+    padding-block: 110px;
+  }
+
+  .collections {
+    gap: 28px;
+  }
+
+  .grid {
+    gap: 28px;
+  }
+}
+
+/* ==========================================
+   LAPTOP — 1025px to 1280px
+========================================== */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+
+  .hero__text h1 {
+    font-size: clamp(3.2rem, 5vw, 4.5rem);
+  }
+
+  .hero {
+    gap: 40px;
+  }
+
+  .section {
+    padding-block: 80px;
+  }
+
+  .collections,
+  .grid {
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+   TABLET LANDSCAPE — 768px to 1024px
+========================================== */
+
+@media (max-width: 1024px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+
+  .hero {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 28px;
+    min-height: auto;
+    padding-block: 60px;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(2.7rem, 5vw, 4rem);
+    line-height: 1.08;
+  }
+
+  .hero__text > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
+  .hero__trust {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    object-fit: cover;
+  }
+
+  .section {
+    padding-block: 72px;
+  }
+
+  .collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .story {
+    gap: 36px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ig-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   TABLET PORTRAIT — 600px to 767px
+========================================== */
+
+@media (max-width: 767px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .section {
+    padding-block: 60px;
+  }
+
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-block: 44px 52px;
+  }
+
+  .hero__text {
+    width: 100%;
+    order: 1;
+  }
+
+  .hero__media {
+    width: 100%;
+    order: 2;
+    position: relative;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(2.8rem, 8vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.055em;
+    max-width: 650px;
+  }
+
+  .hero__text > p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 540px;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__media img {
+    width: 100%;
+    height: clamp(340px, 85vw, 550px);
+    min-height: 0;
+    object-fit: cover;
+    border-radius: var(--radius-xl, 16px);
+  }
+
+  .hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 12px;
+  }
+
+  .hero__badge-card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: max-content;
+  }
+
+  /* Section headings */
+  .section__head {
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .section__head h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  /* Collections */
+  .collections {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* Product grids */
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* Story */
+  .story {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .story h2 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .story__art {
+    width: 100%;
+  }
+
+  .story__art img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+  }
+
+  /* Why section */
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* Instagram */
+  .ig-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  /* Newsletter */
+  .newsletter-box {
+    padding: 32px 22px;
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ==========================================
+   MOBILE — 480px and below
+========================================== */
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .section {
+    padding-block: 48px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: 34px 42px;
+    gap: 26px;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(2.45rem, 11vw, 3.2rem);
+    line-height: 1.04;
+  }
+
+  .hero__text > p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 48px;
+  }
+
+  .hero__media img {
+    height: 380px;
+  }
+
+  .hero__badge-card {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+
+  .hero__trust {
+    gap: 10px 14px;
+    line-height: 1.6;
+  }
+
+  /* Collection */
+  .section__head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section__head h2 {
+    font-size: 1.9rem;
+  }
+
+  .collections {
+    gap: 10px;
+  }
+
+  /* Product cards */
+  .grid {
+    gap: 10px;
+  }
+
+  .grid > *,
+  .collections > * {
+    min-width: 0;
+  }
+
+  .grid img,
+  .collections img {
+    max-width: 100%;
+  }
+
+  /* Story */
+  .story h2 {
+    font-size: 2.3rem;
+    line-height: 1.08;
+  }
+
+  .story p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Why */
+  .center h2 {
+    font-size: 2rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Instagram */
+  .ig-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Newsletter */
+  .newsletter-box {
+    padding: 28px 18px;
+  }
+
+  .newsletter-box h2 {
+    font-size: 2rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 14px;
+  }
+
+  .footer-grid > * {
+    min-width: 0;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+
+  /* Floating WhatsApp */
+  .whatsapp-float {
+    right: 14px;
+    bottom: 16px;
+    z-index: 999;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE — 360px and below
+========================================== */
+
+@media (max-width: 360px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .hero__text h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero__media img {
+    height: 320px;
+  }
+
+  .collections,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & TOUCH INTERACTIONS
+========================================== */
+
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+
+button,
+.btn,
+.navigation a {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent, #a47a4e);
+  outline-offset: 4px;
+}
+
+/* Avoid unwanted animation for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

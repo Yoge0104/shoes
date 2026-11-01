@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Footwear | Sketch My Shoes Studio</title>
+<meta name="description" content="Explore our handcrafted footwear collection. Filter by silhouette, UK size, color, and price. Order directly on WhatsApp with personal concierge support.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="All Footwear | Sketch My Shoes Studio">
+<meta property="og:description" content="Explore our handcrafted footwear collection. Filter by silhouette, UK size, color, and price.">
+<meta property="og:site_name" content="Sketch My Shoes">
+<meta property="og:image" content="assets/images/hero-campaign.jpg">
+<meta name="theme-color" content="#FBF9F5">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body data-page="shop">
+<main id="main">
+
+<div class="container">
+  <div class="page-head">
+    <p class="eyebrow" style="margin-bottom:6px">The Footwear Catalogue</p>
+    <h1 id="shop-title">All Footwear</h1>
+    <p class="muted" style="max-width:54ch;margin:0">From precision retro runners to handcrafted Goodyear welted leathers and 1-of-1 painted bespoke custom pairs.</p>
+  </div>
+  
+  <div class="shop">
+    <aside class="filters-wrap" id="filters-wrap">
+      <div class="filters-panel">
+        <div class="filters__head">
+          <h2 style="margin:0;font-size:1.2rem">Filter Footwear</h2>
+          <button class="icon-btn" data-filters-close aria-label="Close filters">&times;</button>
+        </div>
+        <form class="filters" id="filters" onsubmit="return false">
+          <div>
+            <h3><label for="search">Keyword Search</label></h3>
+            <input type="search" id="search" placeholder="Search by name, style, color...">
+          </div>
+          <div>
+            <h3>Silhouettes</h3>
+            <div id="f-cats"></div>
+          </div>
+          <div id="f-price">
+            <h3>Price Range (₹)</h3>
+            <div class="price-range">
+              <input type="number" id="p-min" min="0" placeholder="Min ₹" aria-label="Minimum price">
+              <input type="number" id="p-max" min="0" placeholder="Max ₹" aria-label="Maximum price">
+            </div>
+          </div>
+          <div>
+            <h3>UK Size</h3>
+            <div class="chips" id="f-sizes"></div>
+          </div>
+          <div>
+            <h3>Colorways</h3>
+            <div class="chips" id="f-colours"></div>
+          </div>
+          <div style="display:grid;gap:8px;padding-top:12px;border-top:1px solid var(--line)">
+            <button type="button" class="btn btn--ghost btn--small" id="clear-filters">Reset Filters</button>
+            <button type="button" class="btn btn--dark btn--small only-mobile" data-filters-close>View Results</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+
+    <div>
+      <div class="shop__bar">
+        <button class="btn btn--small btn--ghost" id="filters-open" aria-expanded="false" aria-controls="filters-wrap">
+          <span>⚡ Filter &amp; Refine</span>
+        </button>
+        <p id="count" class="muted" role="status" style="margin:0;font-weight:600"></p>
+        <label class="sort">
+          <span>Sort By:</span>
+          <select id="sort">
+            <option value="newest">Featured &amp; Newest</option>
+            <option value="price-asc" data-price>Price: Low to High</option>
+            <option value="price-desc" data-price>Price: High to Low</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid" id="shop-grid"></div>
+    </div>
+  </div>
+</div>
+
+</main>
+<script src="js/config.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/checkout.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+</body>
+</html>
